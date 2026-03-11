@@ -1,0 +1,15 @@
+{
+  "name": "brighten-install",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": ["src/client", "src/server"],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=src/server\" \"npm run dev --workspace=src/client\"",
+    "build": "npm run build --workspace=src/server && npm run build --workspace=src/client",
+    "start": "npm run start --workspace=src/server",
+    "lint": "npm run lint --workspace=src/client"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
